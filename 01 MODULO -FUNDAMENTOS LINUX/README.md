@@ -38,7 +38,8 @@ echo Me encanta la bash!! > file1.txt
 touch file2.txt
 ```
 
-**Screnshot Terminal**
+**Screenshot Terminal**
+
 ![E1](./Static/01%20EJERCICIO-LINUX-BASH.png)
 
 ### _EJERCICIO 02_
@@ -71,7 +72,8 @@ cp file1.txt file2.txt
 mv file2.txt ../../empty/file2.txt
 ```
 
-**Screnshot Terminal**
+**Screenshot Terminal**
+
 ![E2](./Static/02%20EJERCICIO-LINUX-BASH.png)
 
 ### _EJERCICIO 03_
@@ -83,6 +85,8 @@ mv file2.txt ../../empty/file2.txt
 ```bash
 Que me gusta la bash!!!!
 ```
+
+<hr>
 
 ### _SOLUCION 03_
 
@@ -104,7 +108,8 @@ cp file1.txt file2.txt
 mv file2.txt ../../empty/file2.txt
 ```
 
-**Screnshot Terminal**
+**Screenshot Terminal**
+
 ![E3](./Static/03%20EJERCICIO-LINUX-BASH.png)
 
 ### _EJERCICIO 04_
@@ -127,6 +132,8 @@ $ ejercicio4.sh patata
 > La palabra "patata" aparece 3 veces
 > Aparece por primera vez en la línea 27
 ```
+
+<hr>
 
 ### _SOLUCION 04_
 
@@ -153,7 +160,8 @@ else
 fi
 ```
 
-**Screnshot Terminal**
+**Screenshot Terminal**
+
 ![E4](./Static/04%20EJERCICIO-LINUX-BASH.png)
 
 ### _EJERCCIO 05_
@@ -174,6 +182,8 @@ $ ejercicio5.sh https://lemoncode.net/ patata
 > La palabra "patata" aparece 1 vez
 > Aparece únicamente en la línea 27
 ```
+
+<hr>
 
 ### _SOLUCION 05_
 
@@ -210,5 +220,6 @@ else
 fi
 ```
 
-**Screnshot Terminal**
+**Screenshot Terminal**
+
 ![E5](./Static/05%20EJERCICIO-LINUX-BASH.png)
