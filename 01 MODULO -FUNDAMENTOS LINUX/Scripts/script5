@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Verificar que el numero de parametros sea correcto
+if [[ $# -gt 2 ]]; then
+   echo Se necesitan unicamente dos parametros para ejecutar este script
+   exit 0
+fi
+
+url=$1
+word=$2
+
+# Descarga del sitio web a fichero
+curl -s -o descarga $url
+
+# Busqueda del parametro de entrada
+nword=$(grep -i $word descarga | wc -w)
+
+if [[ $nword -eq 0 ]]; then
+   echo No se ha encontrado la palabra "$word"
+elif [[ $nword -eq 1 ]]; then
+   nline=$(grep -n -i $word descarga | head -n 1 | cut -d: -f1)
+   
+   echo La palabra $word aparece $nword veces
+   echo Aparece unicamente en la linea $nline
+else
+   nline=$(grep -n -i $word descarga | head -n 1 | cut -d: -f1)
+
+   echo La palabra $word aparece $nword veces
+   echo Aparece por primera vez en la linea $nline
+fi

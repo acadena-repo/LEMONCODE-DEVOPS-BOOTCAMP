@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Getting text content for file1
+CONTENT="Que me gusta la bash!!!!"
+if [[ $# -gt 0 ]]; then
+   CONTENT=$1
+fi
+
+mkdir foo
+mkdir empty
+mkdir foo/dummy
+cd foo/dummy
+echo $CONTENT > file1.txt
+cp file1.txt file2.txt
+mv file2.txt ../../empty/file2.txt

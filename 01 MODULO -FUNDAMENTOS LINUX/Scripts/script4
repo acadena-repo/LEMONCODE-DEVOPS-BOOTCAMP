@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [[ $# -lt 1 ]]; then
+   echo No se encontro ningun parametro de busqueda
+   exit 0
+fi
+
+curl -s -o descarga https://expansion.mx/tendencias/2017/10/20/los-50-mejores-platillos-de-todo-el-mundo
+
+# Busqueda del parametro de entrada
+nword=$(grep -i $1 descarga | wc -w)
+
+if [[ $nword -eq 0 ]]; then
+   echo No se ha encontrado la palabra $1
+else
+   nline=$(grep -n -i $1 descarga | head -n 1 | cut -d: -f1)
+
+   echo La palabra $1 aparece $nword veces
+   echo Aparece por primera vez en la linea $nline
+fi
+
