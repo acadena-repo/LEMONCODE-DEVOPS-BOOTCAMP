@@ -1,0 +1,30 @@
+
+services:
+  some-mongo:
+    image: mongo
+    volumes:
+      - vol-mongo:/data/db
+    networks:
+      - lemoncode-challenge
+
+  topics-api:
+    image: node-backend:1.0.0
+    networks:
+      - lemoncode-challenge
+    environment:
+      - DATABASE_URL=mongodb://some-mongo:27017
+
+  frontend:
+    image: node-front:1.0.0
+    networks:
+      - lemoncode-challenge
+    ports:
+      - 8080:3000
+    environment:
+      - API_URI=http://topics-api:5000/api/topics
+
+volumes:
+  vol-mongo:
+
+networks:
+  lemoncode-challenge:
