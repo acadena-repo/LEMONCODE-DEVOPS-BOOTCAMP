@@ -42,6 +42,25 @@ touch file2.txt
 
 ![E1](./Static/01%20EJERCICIO-LINUX-BASH.png)
 
+### _`CORRECCIONES A SOLUCION 01`_
+
+**Revision -Ejercicio 1: _el directorio foo está por encima de empty y dummy, pero en tu caso foo y empty están al mismo nivel._**
+
+### _MODIFICACION_
+
+```bash
+mkdir foo
+mkdir foo/empty
+mkdir foo/dummy
+cd foo/dummy
+echo Me encanta la bash!! > file1.txt
+touch file2.txt
+```
+
+**Screenshot Terminal**
+
+![E1M](./Static/01%20EJERCICIO-MODIFICACION.png)
+
 ### _EJERCICIO 02_
 
 ### _`2. Mediante comandos de bash, vuelca el contenido de file1.txt a file2.txt y mueve file2.txt a la carpeta empty`_
@@ -75,6 +94,22 @@ mv file2.txt ../../empty/file2.txt
 **Screenshot Terminal**
 
 ![E2](./Static/02%20EJERCICIO-LINUX-BASH.png)
+
+### _`CORRECCIONES A SOLUCION 02`_
+
+**Revision -Ejercicio 2: _había que copiar el contenido de un fichero en otro, no copiarlo._**
+
+### _MODIFICACION_
+
+```bash
+cd foo/dummy
+cat file1.txt > file2.txt
+mv file2.txt ../empty/file2.txt
+```
+
+**Screenshot Terminal**
+
+![E2M](./Static/02%20EJERCICIO-MODIFICACION.png)
 
 ### _EJERCICIO 03_
 
@@ -111,6 +146,34 @@ mv file2.txt ../../empty/file2.txt
 **Screenshot Terminal**
 
 ![E3](./Static/03%20EJERCICIO-LINUX-BASH.png)
+
+### _`CORRECCIONES A SOLUCION 03`_
+
+**Revision -Ejercicio 3: _los comentarios de los dos ejercicios anteriores aplican aquí también._**
+
+### _MODIFICACION_
+
+```bash
+#!/bin/bash
+
+# Getting text content for file1
+CONTENT="Que me gusta la bash!!!!"
+if [[ $# -gt 0 ]]; then
+   CONTENT=$1
+fi
+
+mkdir foo
+mkdir foo/empty
+mkdir foo/dummy
+cd foo/dummy
+echo $CONTENT > file1.txt
+cat file1.txt > file2.txt
+mv file2.txt ../empty/file2.txt
+```
+
+**Screenshot Terminal**
+
+![E3M](./Static/03%20EJERCICIO-MODIFICACION.png)
 
 ### _EJERCICIO 04_
 
